@@ -1,4 +1,5 @@
 # pentaho-det-components
+Standalone enviroment to build det components
 
 ## Usage
 ```bash
