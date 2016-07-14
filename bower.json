@@ -1,0 +1,27 @@
+{
+  "name": "pentaho-det-components",
+  "version": "0.1.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https:github.com/francisco-guilherme/pentaho-det-components.git"
+  },
+  "devDependencies": {
+    "lodash": "~3.10.0",
+    "modernizr": "~2.8.3",
+    "angular-route": "~1.4.1",
+    "text": "requirejs-text#^2.0.15"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "requirejs": "~2.1.18",
+    "jquery": "~2.1.4"
+  }
+}
