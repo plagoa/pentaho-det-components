@@ -1,19 +1,14 @@
 define(
   [
     'angular',
-    'services/mock.service',
-    'components/field-selector/field-selector.component',
-    'components/drop-zones/drop-zones.component',
+    'components/components.module',
     'angular-route'
   ],
-  function(angular, mockService, fieldSelectorComponent, dropZonesComponent) {
+  function(angular, componentsModule) {
     'use strict';
 
     angular
-      .module('app', ['ngRoute'])
-      .component(fieldSelectorComponent.name, fieldSelectorComponent.options)
-      .component(dropZonesComponent.name, dropZonesComponent.options)
-      .service('mockService', mockService)
+      .module('app', ['ngRoute', componentsModule.name])
       .config(config);
 
     function config($routeProvider) {
