@@ -17,11 +17,13 @@
     "lodash": "~3.10.0",
     "modernizr": "~2.8.3",
     "angular-route": "~1.4.1",
-    "text": "requirejs-text#^2.0.15"
+    "text": "requirejs-text#^2.0.15",
+    "require-css": "^0.1.8"
   },
   "dependencies": {
     "bootstrap": "~3.3.5",
     "requirejs": "~2.1.18",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "angular": "1.5.7"
   }
 }
