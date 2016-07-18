@@ -1,16 +1,15 @@
 define(
   [
-    'text!./field-selector.html',
-    './field-selector.controller'
+    'text!./field-selector.html'
   ],
-  function(fieldSelectorTemplate, fieldSelectorController) {
+  function(fieldSelectorTemplate) {
 
     var options = {
       bindings: {
-        fields: '<'
+        fields: '<',
+        onSelect: '&'
       },
-      template: fieldSelectorTemplate,
-      controller: fieldSelectorController
+      template: fieldSelectorTemplate
     };
 
     return {
