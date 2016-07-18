@@ -17,7 +17,7 @@ define(
         return fields;
       }
 
-      function updateFieldState(selectedField) {
+      function fieldSelected(selectedField) {
         fields.forEach(function(field){
           if(field.name == selectedField.name) field.state = !selectedField.state;
         });
@@ -25,7 +25,7 @@ define(
 
       return {
         getFields: getFields,
-        updateFieldState: updateFieldState
+        fieldSelected: fieldSelected
       }
     }
 
