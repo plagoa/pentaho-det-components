@@ -1,8 +1,6 @@
 <ul>
-  <li ng-repeat="field in $ctrl.fields track by $index"
-      ng-click="$ctrl.onSelected(field)"
-      ng-style="{ opacity : field.state ? '0.5' : '1' }">
-
-      {{field.name}}
-  </li>
+  <field-item ng-repeat="field in $ctrl.fields track by $index"
+              on-select="$ctrl.onSelected(field)" 
+              field="field">
+  </field-item>
 </ul>
