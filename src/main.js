@@ -5,16 +5,15 @@ require.config({
   paths: {
     'jquery'				    : '../bower_components/jquery/dist/jquery',
     'angular'				    : '../bower_components/angular/angular',
-    'angular-route'			: '../bower_components/angular-route/angular-route',
-    'text'              : '../bower_components/text/text'
+    'text'              : '../bower_components/text/text',
+    'css'               : '../bower_components/require-css/css'
   },
 
   shim: {
     'angular': {
       exports: 'angular',
       deps: ['jquery']
-    },
-    'angular-route': ['angular']
+    }
   }
 });
 
