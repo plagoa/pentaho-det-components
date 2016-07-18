@@ -7,8 +7,7 @@ define(
 
     var options = {
       bindings: {
-        fields: '<',
-        onSelected: '&'
+        fields: '<'
       },
       template: fieldSelectorTemplate,
       controller: fieldSelectorController
