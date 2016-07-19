@@ -10,7 +10,10 @@ define(
         {name: 'Field 2', state: false},
         {name: 'Field 3', state: false},
         {name: 'Field 4', state: false},
-        {name: 'Field 5', state: false}
+        {name: 'Field 5', state: false},
+        {name: 'Field 11', state: false},
+        {name: 'Field 12', state: false},
+        {name: 'Field 13', state: false}
       ];
 
       function getFields() {
