@@ -5,7 +5,7 @@ define(
     'components/components.controller',
     'components/field-selector/field-selector.component',
     'components/drop-zones/drop-zones.component',
-    'css!./components.css',
+    'css!./components.css'
   ],
   function(angular, MockService, ComponentsController, fieldSelectorComponent, dropZonesComponent) {
     'use strict';
