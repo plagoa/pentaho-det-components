@@ -1,5 +1,6 @@
+<input ng-model="searchText.name" placeholder="search in name">
 <ul>
-  <li ng-repeat="field in $ctrl.fields track by $index"
+  <li ng-repeat="field in $ctrl.fields | filter:searchText track by $index"
       ng-click="$ctrl.onSelect({field:field})"
       ng-style="{ opacity : field.state ? '0.5' : '1' }">
       {{ field.name }}
