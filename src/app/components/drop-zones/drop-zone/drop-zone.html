@@ -1,0 +1,13 @@
+<div class="">
+    <div class="drop-zone-title">
+        <p><span>{{ $ctrl.label }}</span></p>
+    </div>
+</div>
+
+
+<div class="drop-zone-drop-parent-container" ng-class="{'drop-zone-disabled': $ctrl.disabled}">
+    <div class="drop-zone-drop-container" name="{{ $ctrl.name }}" id="{{ $ctrl.id }}"
+         ng-click="$ctrl.dropZoneSize()">
+        <p ng-show="!$ctrl.currentFields || $ctrl.currentFields.length == 0"><span>{{ $ctrl.emptyLabel }}{{$ctrl.required ? ' *' : ''}}</span></p>
+    </div>
+</div>

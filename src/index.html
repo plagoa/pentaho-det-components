@@ -9,7 +9,7 @@
 
 		<div class="components-wrapper" ng-controller="ComponentsController as CompCtrl">
 			<field-selector class="components-field-selector" on-select="CompCtrl.onSelect(field)" fields="CompCtrl.fields()" ></field-selector>
-			<drop-zones class="components-drop-zones"></drop-zones>
+			<drop-zones class="components-drop-zones" drop-zones-list="CompCtrl.dropZones()"></drop-zones>
 		</div>
 
 		<script data-main="main" src="bower_components/requirejs/require.js"></script>

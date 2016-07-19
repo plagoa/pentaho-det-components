@@ -1,12 +1,20 @@
 define(
   [
-    './drop-zones.controller'
+    'text!./drop-zones.html'
   ],
-  function(dropZonesController) {
-
+  function(dropZonesTemplate) {
     var options = {
-      template: '<h1>Component</h1><h2>{{ $ctrl.name }} !</h2>',
-      controller: dropZonesController
+      bindings: {
+        // Inputs
+        dropZonesList: '<',
+
+        // Outputs
+        onDrop: '&',
+        onDragStart: '&',
+        onDragStop: '&',
+        onRemove: '&'
+      },
+      template: dropZonesTemplate
     };
 
     return {

@@ -18,5 +18,41 @@ body, ul {
   width: 200px;
   height: 500px;
   float: left;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
+}
+
+.drop-zone-drop-parent-container {
+    width: 190px;
+    height: 70px;
+    font-family: 'Open Sans Regular', 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+}
+
+.drop-zone-drop-container {
+    position: absolute;
+    width: 186px;
+    height: 70px;
+    background: inherit;
+    background-color: rgba(248, 248, 248, 1);
+    border: none;
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Open Sans Regular', 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    word-wrap: break-word;
+}
+
+.drop-zone-disabled{
+    opacity: 0.5;
+    pointer-events: none;
 }
