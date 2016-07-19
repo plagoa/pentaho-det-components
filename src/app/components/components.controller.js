@@ -1,9 +1,8 @@
 define(
   [
-    'lodash',
     'services/mock.service'
   ],
-  function(_, MockService) {
+  function(MockService) {
 
     function componentsController(MockService) {
 
@@ -12,8 +11,7 @@ define(
       }
 
       function getCategories() {
-        var fields = MockService.getFields();
-        return _.groupBy(fields, 'category');
+        return MockService.getCategories();
       }
 
       function onFieldSelected(field) {
