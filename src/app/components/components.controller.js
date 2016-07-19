@@ -10,13 +10,18 @@ define(
         return MockService.getFields();
       }
 
+      function dropZones() {
+        return MockService.getDropZones();
+      }
+
       function onSelect(field) {
         MockService.fieldSelected(field);
       }
 
       return {
         onSelect: onSelect,
-        fields: fields
+        fields: fields,
+        dropZones: dropZones
       }
     }
 

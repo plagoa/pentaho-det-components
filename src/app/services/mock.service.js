@@ -13,6 +13,19 @@ define(
         {name: 'Field 5', state: false}
       ];
 
+
+      var drop_zones = [
+        {name: 'dropZone1', id: 'dp1', label: 'Drop Zone 1', maxFields: 1, emptyLabel: 'Drop Field Here', disabled: 'false', required: 'true', acceptFields: {}, currentFields: {}},
+        {name: 'dropZone2', id: 'dp2', label: 'Drop Zone 2', maxFields: 5, emptyLabel: 'Drop Numeric Field Here', disabled: 'true', required: 'false', acceptFields: {}},
+        {name: 'dropZone3', id: 'dp3', label: 'Drop Zone 3', maxFields: 4, emptyLabel: 'Drop Any Field Here', required: 'true', acceptFields: {}},
+        {name: 'dropZone4', id: 'dp4', label: 'Drop Zone 4', maxFields: 3, emptyLabel: 'Drop Any Field Here', disabled: 'true', required: 'false', acceptFields: {}}
+      ];
+
+      function getDropZones() {
+        return drop_zones;
+      }
+
+
       function getFields() {
         return fields;
       }
@@ -25,6 +38,7 @@ define(
 
       return {
         getFields: getFields,
+        getDropZones: getDropZones,
         fieldSelected: fieldSelected
       }
     }
