@@ -1,6 +1,8 @@
 define(
-  [],
-  function() {
+  [
+    'lodash'
+  ],
+  function(_) {
     'use strict';
 
     function mockService() {
@@ -22,6 +24,10 @@ define(
         return fields;
       }
 
+      function getCategories() {
+        return _.groupBy(fields, 'category');;
+      }
+
       function fieldSelected(selectedField) {
         fields.forEach(function(field){
           if(field.name == selectedField.name) field.state = !selectedField.state;
@@ -30,6 +36,7 @@ define(
 
       return {
         getFields: getFields,
+        getCategories: getCategories,
         fieldSelected: fieldSelected
       }
     }
