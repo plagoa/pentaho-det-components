@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    padding: 0;
-    color: #333;
-    font-family: "Arial", sans-serif;
-    font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: "Arial", sans-serif;
+  font-size: 0.9em;
 }
 
 .components-field-selector {
@@ -11,48 +11,81 @@ body {
   height: 500px;
   float: left;
   text-align: center;
-  padding: 10px 0;
 }
 
-.components-field-selector ul.view-mode {
+/* View Mode Menu */
+
+.view-mode {
+  margin: 10px;
+}
+
+.view-mode ul {
+  float: left;
+  left: 50%;
+  margin: 0;
   padding: 0;
-  clear: both;
+  position: relative;
+  list-style: none;
 }
 
-.components-field-selector ul.view-mode li{
-  display: inline;
+.view-mode ul li{
+  float: left;
+  right: 50%;
+  position:relative;
+  float: left;
   padding: 7px 9px;
   border: 1px solid #ccc;
 }
 
-.components-field-selector ul.view-mode li.active {
+.view-mode ul li:first-of-type {
+  border-right: none;
+}
+
+.view-mode ul li.active {
   box-shadow: 0px -3px 0px #2862b0 inset;
   color: #2862b0;
 }
 
-.components-field-selector ul.list {
-  padding: 0 0 0 18px;
+/* View List */
+
+.view-list {
+  padding: 0 0 0 22px;
   text-align: left;
 }
 
-.components-field-selector ul.list li {
+.view-list li {
   list-style-type: none;
 }
 
-.components-field-selector li.field {
+.view-list li.field,
+.view-list span.label {
   height: 30px;
   line-height: 30px;
 }
 
-.components-field-selector span.category-label {
-  height: 30px;
-  line-height: 30px;
+.view-list span.label {
   font-weight: bold;
 }
 
-.components-field-selector li.category {
-  margin-bottom: 5px;
+.view-list span.active {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #2862b0;
+  float: left;
+  margin: 12px 7px 0 0;
 }
+
+/* Search */
+
+.search-field {
+  width: 180px;
+  height: 20px;
+  padding: 3px 5px;
+  margin-top: 10px;
+}
+
+/* Drop Zones */
 
 .components-drop-zones {
   width: 230px;
