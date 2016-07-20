@@ -4,19 +4,35 @@ define(
   function() {
       function dropZoneController() {
           function dropZoneSize() {
-              if ( this.maxFields && this.maxFields > 0 ) {
+              if ( this.dropZone.maxFields && this.dropZone.maxFields > 0 ) {
                   var currentFieldsLength = 0;
-                  if ( this.currentFields ) {
-                      currentFieldsLength = this.currentFields.length;
+                  if ( this.dropZone.currentFields ) {
+                      currentFieldsLength = this.dropZone.currentFields;
                   }
-                  alert(currentFieldsLength);
-                  return Math.min(this.maxFields, Math.max(3, currentFieldsLength +1));
+                  return Math.min(this.dropZone.maxFields, Math.max(3, currentFieldsLength +1));
               }
               return 0;
           }
 
+          function allowDrop(ev) {
+              ev.preventDefault();
+          }
+
+          function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+          }
+
+          function drop(ev) {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+          }
+
           return {
-              dropZoneSize: dropZoneSize
+              dropZoneSize: dropZoneSize,
+              allowDrop: allowDrop,
+              drag: drag,
+              drop: drop
           }
           
       }

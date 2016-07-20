@@ -1,13 +1,19 @@
 <div class="">
     <div class="drop-zone-title">
-        <p><span>{{ $ctrl.label }}</span></p>
+        <p><span>{{ $ctrl.dropZone.label }}</span></p>
     </div>
 </div>
 
 
-<div class="drop-zone-drop-parent-container" ng-class="{'drop-zone-disabled': $ctrl.disabled}">
-    <div class="drop-zone-drop-container" name="{{ $ctrl.name }}" id="{{ $ctrl.id }}"
-         ng-click="$ctrl.dropZoneSize()">
-        <p ng-show="!$ctrl.currentFields || $ctrl.currentFields.length == 0"><span>{{ $ctrl.emptyLabel }}{{$ctrl.required ? ' *' : ''}}</span></p>
-    </div>
+<div class="drop-zone-drop-parent-container" ng-class="{'drop-zone-disabled': $ctrl.dropZone.disabled}">
+    <div class="drop-zone-drop-container" name="{{ $ctrl.dropZone.name }}" id="{{ $ctrl.id }}">
+        <p ng-show="!$ctrl.dropZone.currentFields || $ctrl.dropZone.currentFields.length == 0"><span>{{ $ctrl.dropZone.emptyLabel }}{{$ctrl.dropZone.required ? ' *' : ''}}</span></p>
+        <ul ng-show="$ctrl.dropZone.currentFields && $ctrl.dropZone.currentFields.length &gt; 0" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <li ng-repeat="zoneField in $ctrl.dropZone.currentFields track by $index"
+                ng-click="$ctrl.onSelect({field:field})"
+                id="{{ zoneField.id }}" draggable="true" ondragstart="drag(event)">
+                {{ zoneField.label }}
+            </li>
+        </ul>
+      </div>
 </div>
