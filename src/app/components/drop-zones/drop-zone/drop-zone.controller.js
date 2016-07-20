@@ -3,6 +3,7 @@ define(
   ],
   function() {
       function dropZoneController() {
+        
           function dropZoneSize() {
               if ( this.dropZone.maxFields && this.dropZone.maxFields > 0 ) {
                   var currentFieldsLength = 0;
@@ -34,7 +35,7 @@ define(
               drag: drag,
               drop: drop
           }
-          
+
       }
       return dropZoneController;
   }
