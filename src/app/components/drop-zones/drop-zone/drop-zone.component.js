@@ -7,15 +7,7 @@ define(
     var options = {
         bindings: {
             // Inputs
-            name: '@',
-            id: '@',
-            label: '@',
-            required: '@',
-            disabled: '@',
-            maxFields: '@',
-            emptyLabel: '@',
-            acceptFields: '@',
-            currentFields: '@',
+            dropZone: '<',
 
             // Outputs
             onDrop: '&',
