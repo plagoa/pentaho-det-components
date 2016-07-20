@@ -7,9 +7,15 @@
 	</head>
 	<body>
 
-		<div class="components-wrapper" ng-controller="ComponentsController as CompCtrl">
-			<field-selector class="components-field-selector" on-select="CompCtrl.onSelect(field)" fields="CompCtrl.fields()" ></field-selector>
-			<drop-zones class="components-drop-zones" drop-zones-list="CompCtrl.dropZones()"></drop-zones>
+		<div class="components-wrapper" ng-controller="ComponentsController as Ctrl">
+
+			<field-selector class="components-field-selector"
+				fields="Ctrl.fields"
+				categories="Ctrl.categories"
+				on-field-selected="Ctrl.onFieldSelected(field)">
+			</field-selector>
+
+			<drop-zones class="components-drop-zones" drop-zones-list="Ctrl.dropZones()"></drop-zones>
 		</div>
 
 		<script data-main="main" src="bower_components/requirejs/require.js"></script>

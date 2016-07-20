@@ -6,22 +6,27 @@ define(
 
     function componentsController(MockService) {
 
-      function fields() {
+      function getFields() {
         return MockService.getFields();
       }
 
-      function dropZones() {
+      function getCategories() {
+        return MockService.getCategories();
+      }
+
+      function getDropZones() {
         return MockService.getDropZones();
       }
 
-      function onSelect(field) {
+      function onFieldSelected(field) {
         MockService.fieldSelected(field);
       }
 
       return {
-        onSelect: onSelect,
-        fields: fields,
-        dropZones: dropZones
+        fields: getFields(),
+        categories: getCategories(),
+        dropZones: getDropZones,
+        onFieldSelected: onFieldSelected
       }
     }
 

@@ -1,8 +1,34 @@
-<input ng-model="searchText.name" placeholder="search in name">
-<ul>
-  <li ng-repeat="field in $ctrl.fields | filter:searchText track by $index"
-      ng-click="$ctrl.onSelect({field:field})"
-      ng-style="{ opacity : field.state ? '0.5' : '1' }">
-      {{ field.name }}
-  </li>
-</ul>
+<div class="view-mode" ng-init="viewMode = 'stream'">
+  <ul>
+    <li ng-click="viewMode = 'stream'" ng-class="{'active': viewMode == 'stream'}">Stream View</li>
+    <li ng-click="viewMode = 'model'" ng-class="{'active': viewMode == 'model'}">Model View</li>
+  </ul>
+</div>
+
+<input class="search-field" ng-model="search.name" placeholder="Field ...">
+
+<div class="view-stream" ng-show="viewMode == 'stream'">
+  <ul class="view-list">
+    <li class="field" ng-repeat="field in $ctrl.fields | filter:search:strict"
+        ng-click="$ctrl.onFieldSelected({field:field})">
+        <span class="active" ng-style="{ opacity : field.state ? '1' : '0' }"></span>
+        {{ field.name }}
+    </li>
+  </ul>
+</div>
+
+<div class="view-model" ng-show="viewMode == 'model'">
+  <ul class="view-list">
+    <li class="category" ng-repeat="(category, categoryGroup) in $ctrl.categories">
+      <span class="label">{{ category }}</span>
+      <ul>
+        <li class="field"
+            ng-repeat="field in categoryGroup | filter:search:strict"
+            ng-click="$ctrl.onFieldSelected({field:field})">
+            <span class="active" ng-style="{ opacity : field.state ? '1' : '0' }"></span>
+            {{ field.name }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
