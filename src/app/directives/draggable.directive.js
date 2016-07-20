@@ -6,7 +6,8 @@ define(
 
       return {
         scope: {
-          drag: '&' // parent
+          dragStart: '&', // parent
+          dragStop: '&' // parent
         },
         link: function(scope, element) {
 
@@ -17,7 +18,16 @@ define(
           el.addEventListener(
             'dragstart',
             function(e) {
-              scope.$apply('drag()');
+              scope.$apply('dragStart()');
+              return false;
+            },
+            false
+          );
+
+          el.addEventListener(
+            'dragend',
+            function(e) {
+              scope.$apply('dragStop()');
               return false;
             },
             false

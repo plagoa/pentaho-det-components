@@ -26,12 +26,17 @@ define(
         console.log("Drag started >", field);
       }
 
+      function onDragStop(field) {
+        console.log("Drag stopped >", field);
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
         dropZones: getDropZones,
         onFieldSelected: onFieldSelected,
-        onDragStart: onDragStart
+        onDragStart: onDragStart,
+        onDragStop: onDragStop
       }
     }
 
