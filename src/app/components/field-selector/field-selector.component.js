@@ -8,7 +8,8 @@ define(
       bindings: {
         fields: '<',
         categories: '<',
-        onFieldSelected: '&'
+        onFieldSelected: '&',
+        onDragStart: '&'
       },
       template: fieldSelectorTemplate
     };

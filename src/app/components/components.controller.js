@@ -22,11 +22,16 @@ define(
         MockService.fieldSelected(field);
       }
 
+      function onDragStart(field) {
+        console.log("Drag started >", field);
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
         dropZones: getDropZones,
-        onFieldSelected: onFieldSelected
+        onFieldSelected: onFieldSelected,
+        onDragStart: onDragStart
       }
     }
 
