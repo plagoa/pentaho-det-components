@@ -118,6 +118,16 @@ body, p, ul {
     padding: 10px;
 }
 
+.drop-zone-drop-container-active {
+    position: absolute;
+    width: 186px;
+    height: 70px;
+    background-color: rgba(204, 223, 237, 1);
+    border-top: 1px solid rgba(215, 215, 215, 1);
+    color: #6c6c6c;
+    padding: 10px;
+}
+
 .drop-zone-disabled{
     opacity: 0.5;
     pointer-events: none;

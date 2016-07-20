@@ -22,11 +22,16 @@ define(
         MockService.fieldSelected(field);
       }
 
+      function onRemove(dropZoneId, fieldId) {
+        MockService.dropZoneFieldRemove(dropZoneId, fieldId);
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
         dropZones: getDropZones,
-        onFieldSelected: onFieldSelected
+        onFieldSelected: onFieldSelected,
+        onRemove: onRemove
       }
     }
 
