@@ -9,7 +9,8 @@ define(
         fields: '<',
         categories: '<',
         onFieldSelected: '&',
-        onDragStart: '&'
+        onDragStart: '&',
+        onDragStop: '&'
       },
       template: fieldSelectorTemplate
     };
