@@ -1,2 +1,10 @@
 node_modules/
 src/bower_components/
+.idea/checkstyle-idea.xml
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/pentaho-det-components.iml
+.idea/vcs.xml
+.idea/workspace.xml
