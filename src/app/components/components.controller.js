@@ -34,6 +34,10 @@ define(
         MockService.dropZoneFieldRemove(dropZoneId, fieldId);
       }
 
+      function onDrop(dropZoneId) {
+        console.log("Dropped on drop zone " + dropZoneId);
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
@@ -41,7 +45,8 @@ define(
         onFieldSelected: onFieldSelected,
         onDragStart: onDragStart,
         onDragStop: onDragStop,
-        onRemove: onRemove
+        onRemove: onRemove,
+        onDrop: onDrop
       }
     }
 

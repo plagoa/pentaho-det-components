@@ -1,3 +1,5 @@
 <drop-zone ng-repeat="item in $ctrl.dropZonesList track by $index"
-           drop-zone="item" on-remove="$ctrl.onRemove({dropZoneId:dropZoneId, fieldId:fieldId})">
+           drop-zone="item" 
+           on-remove="$ctrl.onRemove({dropZoneId:dropZoneId, fieldId:fieldId})"7
+           on-drop="$ctrl.onDrop({dropZoneId:dropZoneId})">
 </drop-zone>
