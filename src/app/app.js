@@ -1,7 +1,7 @@
 define(
   [
     'angular',
-    'components/components.module'
+    'visualization/visualization.module'
   ],
   function(angular, componentsModule) {
     'use strict';

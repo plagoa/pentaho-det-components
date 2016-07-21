@@ -1,10 +1,10 @@
 define(
   [
-    'services/mock.service'
+    './services/mock.service'
   ],
   function(MockService) {
 
-    function componentsController(MockService) {
+    function visualizationController(MockService) {
 
       function getFields() {
         return MockService.getFields();
@@ -45,6 +45,6 @@ define(
       }
     }
 
-    return componentsController;
+    return visualizationController;
   }
 );
