@@ -14,9 +14,9 @@ define(
             onDragStart: '&',
             onDragStop: '&',
             onRemove: '&',
-            onChange: '&',
+           /* onChange: '&',
             onReorder: '&',
-            onOrderChange: '&'
+            onOrderChange: '&'*/
           },
       template: dropZoneTemplate,
       controller: dropZoneController

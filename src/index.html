@@ -17,7 +17,7 @@
 											on-field-selected="Ctrl.onFieldSelected(field)">
 			</field-selector>
 
-			<drop-zones class="components-drop-zones" drop-zones-list="Ctrl.dropZones()"></drop-zones>
+			<drop-zones class="components-drop-zones" drop-zones-list="Ctrl.dropZones()" on-remove="Ctrl.onRemove(dropZoneId, fieldId)"></drop-zones>
 		</div>
 
 		<script data-main="main" src="bower_components/requirejs/require.js"></script>

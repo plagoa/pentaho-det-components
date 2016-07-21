@@ -6,13 +6,14 @@
 
 
 <div class="drop-zone-drop-parent-container" ng-class="{'drop-zone-disabled': $ctrl.dropZone.disabled}">
-    <div class="drop-zone-drop-container" name="{{ $ctrl.dropZone.name }}" id="{{ $ctrl.id }}">
+    <div ng-class="{'drop-zone-drop-container-active': $ctrl.dropZone.active, 'drop-zone-drop-container': !$ctrl.dropZone.active}" name="{{ $ctrl.dropZone.name }}" id="{{ $ctrl.dropZone.id }}">
         <p ng-show="!$ctrl.dropZone.currentFields || $ctrl.dropZone.currentFields.length == 0"><span>{{ $ctrl.dropZone.emptyLabel }}{{$ctrl.dropZone.required ? ' *' : ''}}</span></p>
-        <ul ng-show="$ctrl.dropZone.currentFields && $ctrl.dropZone.currentFields.length &gt; 0" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <ul ng-show="$ctrl.dropZone.currentFields && $ctrl.dropZone.currentFields.length &gt; 0" ondrop="" ondragover="">
             <li ng-repeat="zoneField in $ctrl.dropZone.currentFields track by $index"
-                ng-click="$ctrl.onSelect({field:field})"
-                id="{{ zoneField.id }}" draggable="true" ondragstart="drag(event)">
+                id="{{ zoneField.id }}" draggable="true" ondragstart="">
                 {{ zoneField.label }}
+
+                <img alt="X" ng-click="$ctrl.onRemove({dropZoneId: $ctrl.dropZone.id, fieldId:zoneField.id})">
             </li>
         </ul>
       </div>
