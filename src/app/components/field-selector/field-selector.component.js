@@ -8,7 +8,9 @@ define(
       bindings: {
         fields: '<',
         categories: '<',
-        onFieldSelected: '&'
+        onFieldSelected: '&',
+        onDragStart: '&',
+        onDragStop: '&'
       },
       template: fieldSelectorTemplate
     };
