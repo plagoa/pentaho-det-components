@@ -1,10 +1,10 @@
 define(
   [
-    'services/mock.service'
+    './services/mock.service'
   ],
   function(MockService) {
 
-    function componentsController(MockService) {
+    function visualizationController(MockService) {
 
       function getFields() {
         return MockService.getFields();
@@ -34,10 +34,6 @@ define(
         MockService.dropZoneFieldRemove(dropZoneId, fieldId);
       }
 
-      function onDrop(dropZoneId) {
-        console.log("Dropped on drop zone " + dropZoneId);
-      }
-
       return {
         fields: getFields(),
         categories: getCategories(),
@@ -45,11 +41,10 @@ define(
         onFieldSelected: onFieldSelected,
         onDragStart: onDragStart,
         onDragStop: onDragStop,
-        onRemove: onRemove,
-        onDrop: onDrop
+        onRemove: onRemove
       }
     }
 
-    return componentsController;
+    return visualizationController;
   }
 );

@@ -1,0 +1,15 @@
+<div class="components-wrapper" ng-controller="VisualizationController as Ctrl">
+
+    <field-selector class="components-field-selector"
+                    fields="Ctrl.fields"
+                    categories="Ctrl.categories"
+                    on-drag-start="Ctrl.onDragStart(field)"
+                    on-drag-stop="Ctrl.onDragStop(field)"
+                    on-field-selected="Ctrl.onFieldSelected(field)">
+    </field-selector>
+
+    <drop-zones class="components-drop-zones"
+                drop-zones-list="Ctrl.dropZones()"
+                on-remove="Ctrl.onRemove(dropZoneId, fieldId)"
+                on-drop="Ctrl.onDrop(dropZoneId)"></drop-zones>
+</div>
