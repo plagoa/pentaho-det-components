@@ -30,13 +30,18 @@ define(
         console.log("Drag stopped >", field);
       }
 
+      function onRemove(dropZoneId, fieldId) {
+        MockService.dropZoneFieldRemove(dropZoneId, fieldId);
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
         dropZones: getDropZones,
         onFieldSelected: onFieldSelected,
         onDragStart: onDragStart,
-        onDragStop: onDragStop
+        onDragStop: onDragStop,
+        onRemove: onRemove
       }
     }
 
