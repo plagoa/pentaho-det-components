@@ -1,4 +1,5 @@
 <div class="components-wrapper" ng-controller="TabController as Ctrl">
+    <div id="drag-field-ghost"></div>
 
     <field-selector class="components-field-selector"
                     fields="Ctrl.fields"
@@ -13,6 +14,6 @@
                 on-remove="Ctrl.onRemove(dropZoneId, fieldId)"
                 on-drop="Ctrl.onDrop(dropZoneId)"
                 on-dragover="Ctrl.onDragover(dropZone)"
-                on-drag-start="Ctrl.onDragStartZone(zoneId, field)"
-                on-drag-stop="Ctrl.onDragStopZone(zoneId, field)"></drop-zones>
+                on-drag-start="Ctrl.onDragZoneStart(zoneId, field)"
+                on-drag-stop="Ctrl.onDragZoneStop(zoneId, field)"></drop-zones>
 </div>

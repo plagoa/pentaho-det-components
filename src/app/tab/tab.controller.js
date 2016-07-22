@@ -52,14 +52,14 @@ define(
         MockService.dropZoneDropActive(field, false);
       }
 
-      function onDragStartZone(zoneId, field) {
+      function onDragZoneStart(zoneId, field) {
         console.log("Drag Zone started > zone ", zoneId, " field ", field);
         MockService.dropZoneDropActive(field, true);
         event.dataTransfer.setData("fieldId", field.id);
         event.dataTransfer.setData("srcZoneId", zoneId);
       }
 
-      function onDragStopZone(zoneId, field) {
+      function onDragZoneStop(zoneId, field) {
         console.log("Drag Zone stopped > zone ", zoneId, " field ", field);
         MockService.dropZoneDropActive(field, false);
       }
@@ -96,8 +96,8 @@ define(
         onFieldSelected: onFieldSelected,
         onDragStart: onDragStart,
         onDragStop: onDragStop,
-        onDragStartZone: onDragStartZone,
-        onDragStopZone: onDragStopZone,
+        onDragZoneStart: onDragZoneStart,
+        onDragZoneStop: onDragZoneStop,
         onRemove: onRemove,
         onDrop: onDrop,
         onDragover: onDragover

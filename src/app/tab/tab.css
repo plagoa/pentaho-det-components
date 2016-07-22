@@ -132,3 +132,25 @@ body, p, ul {
     opacity: 0.5;
     pointer-events: none;
 }
+
+#drag-field-ghost {
+    background: white;
+    width: 220px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.drag-field {
+  color: #000000;
+  background-color: #b0d9f5;
+  border: 1px solid #98bdd9;
+  padding: 5px;
+  width: 190px;
+  cursor: move;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
