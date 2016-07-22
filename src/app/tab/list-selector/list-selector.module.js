@@ -16,32 +16,28 @@
 
 define(
   [
-    'text!./drop-zone.html',
-    './drop-zone.controller'
+    'angular',
+    './list-selector.component'
   ],
-  function(dropZoneTemplate, dropZoneController) {
-    var options = {
-        bindings: {
-            // Inputs
-            dropZone: '<',
+  function(angular, listSelectorComponent) {
+    'use strict';
 
-            // Outputs
-            onDrop: '&',
-            onDragover: '&',
-            onDragStart: '&',
-            onDragStop: '&',
-            onRemove: '&',
-           /* onChange: '&',
-            onReorder: '&',
-            onOrderChange: '&'*/
-          },
-      template: dropZoneTemplate,
-      controller: dropZoneController
+    var module = {
+      name: "list.selector"
     };
 
-    return {
-      name: "dropZone",
-      options: options
-    };
+    activate();
+
+    return module;
+
+    /**
+     * Creates and configure angular module with dependencies
+     * @private
+     */
+    function activate() {
+      angular
+        .module(module.name, [])
+        .component(listSelectorComponent.name, listSelectorComponent.options);
+    }
   }
 );

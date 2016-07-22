@@ -16,9 +16,9 @@
 
 define(
   [
-    'text!./field-selector.html'
+    'text!./list-selector.html'
   ],
-  function(fieldSelectorTemplate) {
+  function(listSelectorTemplate) {
 
     var options = {
       bindings: {
@@ -28,7 +28,7 @@ define(
         onDragStart: '&',
         onDragStop: '&'
       },
-      template: fieldSelectorTemplate
+      template: listSelectorTemplate
     };
 
     return {

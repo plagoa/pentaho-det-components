@@ -16,16 +16,16 @@
 
 define(
     [
-        'text!./visualization.html'
+      'text!./tab.html'
     ],
-    function(visualizationTemplate) {
+    function(tabTemplate) {
 
         var options = {
-            template: visualizationTemplate
+            template: tabTemplate
         };
 
         return {
-            name: "visualization",
+            name: "tab",
             options: options
         };
     }

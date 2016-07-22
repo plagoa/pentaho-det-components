@@ -19,7 +19,6 @@ require.config({
 });
 
 // Start the main app logic.
-require(['app'], function() {
-
-  angular.bootstrap(document.body, ['app']);
+require(['app.module'], function(app) {
+  app.bootstrap(document.body);
 });
