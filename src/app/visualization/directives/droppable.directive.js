@@ -23,6 +23,7 @@ define(
             return {
                 scope: {
                     drop: '&',
+                    dragover: '&'
                 },
                 link: function(scope, element) {
 
@@ -51,7 +52,7 @@ define(
                     el.addEventListener(
                         'dragover',
                         function(e) {
-                            event.preventDefault();
+                            scope.$apply('dragover()');
                         },
                         false
                     );

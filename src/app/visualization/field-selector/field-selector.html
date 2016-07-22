@@ -15,7 +15,8 @@
 <div class="view-stream"
      ng-show="viewMode == 'stream'">
   <ul class="view-list">
-    <li class="field"
+    <li id="{{field.id}}"
+        class="field"
         ng-repeat="field in $ctrl.fields | filter:search:strict"
         ng-click="$ctrl.onFieldSelected({field:field})"
         draggable drag-start="$ctrl.onDragStart({field:field})"
@@ -34,7 +35,8 @@
         ng-repeat="(category, categoryGroup) in $ctrl.categories">
       <span class="label">{{ category }}</span>
       <ul>
-        <li class="field"
+        <li id="{{field.id}}"
+            class="field"
             ng-repeat="field in categoryGroup | filter:search:strict"
             ng-click="$ctrl.onFieldSelected({field:field})"
             draggable

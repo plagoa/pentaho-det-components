@@ -11,7 +11,8 @@
          name="{{ $ctrl.dropZone.name }}"
          id="{{ $ctrl.dropZone.id }}"
          droppable
-         drop="$ctrl.onDrop({dropZoneId: $ctrl.dropZone.id})" >
+         drop="$ctrl.onDrop({dropZoneId: $ctrl.dropZone.id})"
+         dragover="$ctrl.onDragover({dropZone: $ctrl.dropZone})">
         <p ng-show="!$ctrl.dropZone.currentFields || $ctrl.dropZone.currentFields.length == 0">
             <span>{{ $ctrl.dropZone.emptyLabel }}{{$ctrl.dropZone.required ? ' *' : ''}}</span>
         </p>
