@@ -34,6 +34,11 @@ define(
           el.addEventListener(
             'dragstart',
             function(e) {
+              var crt = this.cloneNode(true);
+              crt.className = "drag-field";
+              document.body.appendChild(crt);
+              e.dataTransfer.setDragImage(crt, 0, 0);
+
               scope.$apply('dragStart()');
               return false;
             },

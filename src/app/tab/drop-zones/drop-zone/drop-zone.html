@@ -21,7 +21,8 @@
            ondragover="">
            <li ng-repeat="zoneField in $ctrl.dropZone.currentFields track by $index"
                id="{{ zoneField.id }}"
-               draggable drag-start="$ctrl.onDragStart({zoneId:$ctrl.dropZone.id, field:zoneField})"
+               draggable 
+               drag-start="$ctrl.onDragStart({zoneId:$ctrl.dropZone.id, field:zoneField})"
                drag-stop="$ctrl.onDragStop({zoneId:$ctrl.dropZone.id, field:zoneField})">
                {{ zoneField.name }}
                <img alt="X"
