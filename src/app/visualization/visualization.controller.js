@@ -43,6 +43,7 @@ define(
 
       function onDragStart(field) {
         console.log("Drag started >", field);
+        event.dataTransfer.setData("fieldId", field.id);
       }
 
       function onDragStop(field) {
@@ -53,6 +54,18 @@ define(
         MockService.dropZoneFieldRemove(dropZoneId, fieldId);
       }
 
+      function onDrop(dropZoneId) {
+        var fieldId = event.dataTransfer.getData("fieldId");
+        event.target.appendChild(document.getElementById(fieldId));
+        console.log("FieldId: " + fieldId + " was dropped on dropzone >", dropZoneId);
+      }
+
+      function onDragover(dropZone) {
+        if(dropZone.maxFields > dropZone.currentFields.length) {
+          event.preventDefault();
+        }
+      }
+
       return {
         fields: getFields(),
         categories: getCategories(),
@@ -60,7 +73,9 @@ define(
         onFieldSelected: onFieldSelected,
         onDragStart: onDragStart,
         onDragStop: onDragStop,
-        onRemove: onRemove
+        onRemove: onRemove,
+        onDrop: onDrop,
+        onDragover: onDragover
       }
     }
 

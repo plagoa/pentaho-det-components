@@ -27,6 +27,7 @@ define(
 
             // Outputs
             onDrop: '&',
+            onDragover: '&',
             onDragStart: '&',
             onDragStop: '&',
             onRemove: '&',
