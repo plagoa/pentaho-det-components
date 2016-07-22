@@ -100,13 +100,12 @@ define(
        fields.forEach(function(field){
          if(field.name == selectedField.name) {
              field.state = !selectedField.state;
-             dropZoneDropActive(field, field.state)
          }
        });
      }
 
 
-function dropZoneDropActive(selectedField, status) {
+     function dropZoneDropActive(selectedField, status) {
          for(var zone in drop_zones)
          {
              var found = false;
@@ -147,6 +146,8 @@ function dropZoneDropActive(selectedField, status) {
              if(zoneItemId === fieldId)
              {
                zone_items.splice(i, 1);
+               var field_remove = getFieldById(fieldId);
+               field_remove.state = false;
                break;
              }
            }
@@ -193,6 +194,7 @@ function dropZoneDropActive(selectedField, status) {
 
                    if(field_to_add) {
                        zone_items.push(field_to_add);
+                       field_to_add.state = true;
                    }
                }
                break;
@@ -201,7 +203,7 @@ function dropZoneDropActive(selectedField, status) {
      }
 
       return {
-        getFields: getFields,
+       getFields: getFields,
        getDropZones: getDropZones,
        getCategories: getCategories,
        fieldSelected: fieldSelected,

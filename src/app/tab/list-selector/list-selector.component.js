@@ -32,7 +32,7 @@ define(
     };
 
     return {
-      name: "fieldSelector",
+      name: "listSelector",
       options: options
     };
   }

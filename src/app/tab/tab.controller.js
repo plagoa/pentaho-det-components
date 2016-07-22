@@ -38,7 +38,7 @@ define(
       }
 
       function onFieldSelected(field) {
-        // MockService.fieldSelected(field);
+        MockService.fieldSelected(field);
       }
 
       function onDragStart(field) {
