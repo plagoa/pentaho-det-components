@@ -39,7 +39,9 @@ define(
       }
 
       function onFieldSelected(field) {
-        MockService.fieldSelected(field);
+        if( !field.disableClick ) {
+          MockService.fieldSelected(field);
+        }
       }
 
       function onDragStart(field) {

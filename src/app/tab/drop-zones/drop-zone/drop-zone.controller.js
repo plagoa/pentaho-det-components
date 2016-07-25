@@ -25,7 +25,7 @@ define(
         if ( this.dropZone.maxFields && this.dropZone.maxFields > 0 ) {
           var currentFieldsLength = 0;
           if ( this.dropZone.currentFields ) {
-            currentFieldsLength = this.dropZone.currentFields;
+            currentFieldsLength = this.dropZone.currentFields.length;
           }
           return Math.min(this.dropZone.maxFields, Math.max(3, currentFieldsLength +1));
         }
