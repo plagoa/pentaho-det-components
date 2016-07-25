@@ -31,7 +31,8 @@ define(
         onDragStop: '&',
         onRemove: '&'
       },
-      template: dropZonesTemplate
+      template: dropZonesTemplate,
+      controllerAs: 'vm'
     };
 
     return {

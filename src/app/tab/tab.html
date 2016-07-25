@@ -1,19 +1,20 @@
-<div class="components-wrapper" ng-controller="TabController as Ctrl">
+<div class="components-wrapper" ng-controller="TabController as vm">
     <div id="drag-field-ghost"></div>
 
     <list-selector class="components-field-selector"
-                    fields="Ctrl.fields"
-                    categories="Ctrl.categories"
-                    on-drag-start="Ctrl.onDragStart(field)"
-                    on-drag-stop="Ctrl.onDragStop(field)"
-                    on-field-selected="Ctrl.onFieldSelected(field)">
+                   fields="vm.fields"
+                   categories="vm.categories"
+                   on-drag-start="vm.onDragStart(field)"
+                   on-drag-stop="vm.onDragStop(field)"
+                   on-field-selected="vm.onFieldSelected(field)">
     </list-selector>
 
     <drop-zones class="components-drop-zones"
-                drop-zones-list="Ctrl.dropZones()"
-                on-remove="Ctrl.onRemove(dropZoneId, fieldId)"
-                on-drop="Ctrl.onDrop(dropZoneId)"
-                on-dragover="Ctrl.onDragover(dropZone)"
-                on-drag-start="Ctrl.onDragZoneStart(zoneId, field)"
-                on-drag-stop="Ctrl.onDragZoneStop(zoneId, field)"></drop-zones>
+                drop-zones-list="vm.dropZones()"
+                on-remove="vm.onRemove(dropZoneId, fieldId)"
+                on-drop="vm.onDrop(dropZoneId)"
+                on-dragover="vm.onDragover(dropZone)"
+                on-drag-start="vm.onDragZoneStart(zoneId, field)"
+                on-drag-stop="vm.onDragZoneStop(zoneId, field)">
+    </drop-zones>
 </div>

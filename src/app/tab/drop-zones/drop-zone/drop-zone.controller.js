@@ -21,13 +21,15 @@ define(
     function dropZoneController() {
       'use strict';
 
+      var vm = this;
+
       function dropZoneSize() {
-        if ( this.dropZone.maxFields && this.dropZone.maxFields > 0 ) {
+        if ( vm.dropZone.maxFields && vm.dropZone.maxFields > 0 ) {
           var currentFieldsLength = 0;
-          if ( this.dropZone.currentFields ) {
-            currentFieldsLength = this.dropZone.currentFields.length;
+          if ( vm.dropZone.currentFields ) {
+            currentFieldsLength = vm.dropZone.currentFields.length;
           }
-          return Math.min(this.dropZone.maxFields, Math.max(3, currentFieldsLength +1));
+          return Math.min(vm.dropZone.maxFields, Math.max(3, currentFieldsLength +1));
         }
         return 0;
       }

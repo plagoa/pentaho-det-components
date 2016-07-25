@@ -26,6 +26,8 @@ define(
       var draggedField;
       var activeZone;
 
+      var vm = this;
+
       function getFields() {
         return MockService.getFields();
       }
