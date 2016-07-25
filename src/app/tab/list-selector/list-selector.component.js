@@ -24,6 +24,8 @@ define(
       bindings: {
         fields: '<',
         categories: '<',
+        disableDrag: '<',
+        disableClick: '<',
         onFieldSelected: '&',
         onDragStart: '&',
         onDragStop: '&'
