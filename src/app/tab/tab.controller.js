@@ -23,7 +23,8 @@ define(
 
     TabController.$inject = ["$element", "MockService"];
     function TabController($element, MockService) {
-
+      var draggedField;
+      var activeZone;
 
       function getFields() {
         return MockService.getFields();
@@ -38,13 +39,14 @@ define(
       }
 
       function onFieldSelected(field) {
-        // MockService.fieldSelected(field);
+        MockService.fieldSelected(field);
       }
 
       function onDragStart(field) {
         console.log("Drag started >", field);
         MockService.dropZoneDropActive(field, true);
-        event.dataTransfer.setData("fieldId", field.id);
+        draggedField = field.id;
+        //event.dataTransfer.setData("fieldId", field.id);
       }
 
       function onDragStop(field) {
@@ -55,8 +57,11 @@ define(
       function onDragZoneStart(zoneId, field) {
         console.log("Drag Zone started > zone ", zoneId, " field ", field);
         MockService.dropZoneDropActive(field, true);
-        event.dataTransfer.setData("fieldId", field.id);
-        event.dataTransfer.setData("srcZoneId", zoneId);
+
+        draggedField = field.id;
+        activeZone = zoneId;
+       // event.dataTransfer.setData("fieldId", field.id);
+       // event.dataTransfer.setData("srcZoneId", zoneId);
       }
 
       function onDragZoneStop(zoneId, field) {
@@ -69,8 +74,8 @@ define(
       }
 
       function onDrop(dropZoneId) {
-        var fieldId = event.dataTransfer.getData("fieldId");
-        var srcZoneId = event.dataTransfer.getData("srcZoneId");
+        var fieldId = draggedField;//event.dataTransfer.getData("fieldId");
+        var srcZoneId = activeZone;//event.dataTransfer.getData("srcZoneId");
         console.log("FieldId: " + fieldId + " was dropped on dropzone >", dropZoneId);
 
         if(srcZoneId && srcZoneId != dropZoneId) {
@@ -80,6 +85,8 @@ define(
         else {
           MockService.dropZoneFieldAdd(dropZoneId, fieldId);
         }
+        draggedField = null;
+        activeZone = null;
       }
 
       function onDragover(dropZone) {

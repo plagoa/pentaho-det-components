@@ -1,13 +1,13 @@
 <div class="components-wrapper" ng-controller="TabController as Ctrl">
     <div id="drag-field-ghost"></div>
 
-    <field-selector class="components-field-selector"
+    <list-selector class="components-field-selector"
                     fields="Ctrl.fields"
                     categories="Ctrl.categories"
                     on-drag-start="Ctrl.onDragStart(field)"
                     on-drag-stop="Ctrl.onDragStop(field)"
                     on-field-selected="Ctrl.onFieldSelected(field)">
-    </field-selector>
+    </list-selector>
 
     <drop-zones class="components-drop-zones"
                 drop-zones-list="Ctrl.dropZones()"

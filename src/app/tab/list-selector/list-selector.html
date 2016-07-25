@@ -19,7 +19,8 @@
         class="field"
         ng-repeat="field in $ctrl.fields | filter:search:strict"
         ng-click="$ctrl.onFieldSelected({field:field})"
-        draggable drag-start="$ctrl.onDragStart({field:field})"
+        draggable="{{!field.state}}"
+        drag-start="$ctrl.onDragStart({field:field})"
         drag-stop="$ctrl.onDragStop({field:field})">
         <span class="active"
               ng-style="{ opacity : field.state ? '1' : '0' }"></span>
@@ -39,7 +40,7 @@
             class="field"
             ng-repeat="field in categoryGroup | filter:search:strict"
             ng-click="$ctrl.onFieldSelected({field:field})"
-            draggable
+            draggable="{{!field.state}}"
             drag-start="$ctrl.onDragStart({field:field})"
             drag-stop="$ctrl.onDragStop({field:field})">
             <span class="active"

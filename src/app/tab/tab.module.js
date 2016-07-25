@@ -22,8 +22,8 @@ define(
     './list-selector/list-selector.module',
     './drop-zones/drop-zones.module',
     './utils/utils-mock.service',
-    'tab/utils/utils-draggable.directive',
-    'tab/utils/utils-droppable.directive',
+    './utils/utils-draggable.directive',
+    './utils/utils-droppable.directive',
     'css!./tab.css'
   ],
   function(angular, tambComponent, tabController, listSelectorModule, dropZonesModule, mockService, draggableDirective, droppableDirective) {
