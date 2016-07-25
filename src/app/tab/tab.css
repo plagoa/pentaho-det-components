@@ -111,7 +111,6 @@ body, p, ul {
 }
 
 .drop-zone-drop-container {
-    position: absolute;
     width: 186px;
     min-height: 70px;
     background-color: rgba(248, 248, 248, 1);
@@ -121,7 +120,6 @@ body, p, ul {
 }
 
 .drop-zone-drop-container-active {
-    position: absolute;
     width: 186px;
     min-height: 70px;
     background-color: rgba(204, 223, 237, 1);

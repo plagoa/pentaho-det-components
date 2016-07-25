@@ -59,7 +59,7 @@ define(
                {id: "2", name: 'Field 2', state: false, category: 'Category 1'},
                {id: "3", name: 'Field 3', state: false, category: 'Category 1'}
            ]},
-       {name: 'dropZone3', id: 'dp3', label: 'Drop Zone 3', maxFields: 4, emptyLabel: 'Drop Any Field Here', active: false, disabled: false, required: true,
+       {name: 'dropZone3', id: 'dp3', label: 'Drop Zone 3', maxFields: 7, emptyLabel: 'Drop Any Field Here', active: false, disabled: false, required: true,
            currentFields:[
 
            ],
