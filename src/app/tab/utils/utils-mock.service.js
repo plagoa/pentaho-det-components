@@ -324,29 +324,39 @@ define(
         return null;
       }
 
-      function dropZoneFieldAdd(dropZoneId, fieldId) {
+      /**
+       *  Inserts field into dropZone before or after mentioned sibling
+       *  if there was already that field in dropZone, it's position is updated.
+       *  By default updates position to the last (or adds to the end)
+       */
+      function dropZoneFieldInsert(dropZoneId, fieldId, isBefore, sibling) {
         for (var zone in drop_zones) {
           var zoneId = drop_zones[zone].id;
 
           if (zoneId === dropZoneId) {
-            var found = false;
+            var insertionIndex = isBefore ? 0 : undefined;
             var zone_items = drop_zones[zone].currentFields;
             for (var i = 0; i < zone_items.length; i++) {
               var zoneItemId = zone_items[i].id;
 
               if (zoneItemId === fieldId) {
-                found = true;
-                break;
+                //remove field if there is already such in a dropZone
+                zone_items.splice(i, 1);
+              } else if (sibling && zone_items[i].id === sibling) {
+                insertionIndex = zone_items.indexOf(zone_items[i]);
+                insertionIndex = isBefore ? insertionIndex : insertionIndex++;
               }
             }
 
-            if (!found) {
-              var field_to_add = getFieldById(fieldId);
-
-              if (field_to_add) {
+            //insert field into appropriate position
+            var field_to_add = getFieldById(fieldId);
+            if (field_to_add) {
+              if (insertionIndex != undefined) {
+                zone_items.splice(insertionIndex, 0, field_to_add);
+              } else {
                 zone_items.push(field_to_add);
-                field_to_add.state = true;
               }
+              field_to_add.state = true;
             }
             break;
           }
@@ -354,13 +364,13 @@ define(
       }
 
       return {
-        getFields: getFields,
-        getDropZones: getDropZones,
-        getCategories: getCategories,
-        fieldSelected: fieldSelected,
-        dropZoneDropActive: dropZoneDropActive,
-        dropZoneFieldRemove: dropZoneFieldRemove,
-        dropZoneFieldAdd: dropZoneFieldAdd
+       getFields: getFields,
+       getDropZones: getDropZones,
+       getCategories: getCategories,
+       fieldSelected: fieldSelected,
+       dropZoneDropActive:dropZoneDropActive,
+       dropZoneFieldRemove: dropZoneFieldRemove,
+       dropZoneFieldInsert: dropZoneFieldInsert
       }
     }
 
