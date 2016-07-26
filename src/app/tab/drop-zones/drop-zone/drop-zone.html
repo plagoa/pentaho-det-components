@@ -1,32 +1,32 @@
 <div class="">
    <div class="drop-zone-title">
-       <p><span>{{ $ctrl.dropZone.label }}</span></p>
+       <p><span>{{ vm.dropZone.label }}</span></p>
    </div>
 </div>
 
 
 <div class="drop-zone-drop-parent-container"
-    ng-class="{'drop-zone-disabled': $ctrl.dropZone.disabled}">
-   <div ng-class="{'drop-zone-drop-container-active': $ctrl.dropZone.active, 'drop-zone-drop-container': !$ctrl.dropZone.active}"
-        name="{{ $ctrl.dropZone.name }}"
-        id="{{ $ctrl.dropZone.id }}"
+    ng-class="{'drop-zone-disabled': vm.dropZone.disabled}">
+   <div ng-class="{'drop-zone-drop-container-active': vm.dropZone.active, 'drop-zone-drop-container': !vm.dropZone.active}"
+        name="{{ vm.dropZone.name }}"
+        id="{{ vm.dropZone.id }}"
         droppable
-        drop="$ctrl.onDrop({dropZoneId: $ctrl.dropZone.id})"
-        dragover="$ctrl.onDragover({dropZone: $ctrl.dropZone})">
-       <p ng-show="!$ctrl.dropZone.currentFields || $ctrl.dropZone.currentFields.length == 0">
-           <span>{{ $ctrl.dropZone.emptyLabel }}{{$ctrl.dropZone.required ? ' *' : ''}}</span>
+        drop="vm.onDrop({dropZoneId: vm.dropZone.id})"
+        dragover="vm.onDragover({dropZone: vm.dropZone})">
+       <p ng-show="!vm.dropZone.currentFields || vm.dropZone.currentFields.length == 0">
+           <span>{{ vm.dropZone.emptyLabel }}{{vm.dropZone.required ? ' *' : ''}}</span>
        </p>
-       <ul ng-show="$ctrl.dropZone.currentFields && $ctrl.dropZone.currentFields.length &gt; 0"
+       <ul ng-show="vm.dropZone.currentFields &amp;&amp; vm.dropZone.currentFields.length &gt; 0"
            ondrop=""
            ondragover="">
-           <li ng-repeat="zoneField in $ctrl.dropZone.currentFields track by $index"
+           <li ng-repeat="zoneField in vm.dropZone.currentFields track by $index"
                id="{{ zoneField.id }}"
                draggable 
-               drag-start="$ctrl.onDragStart({zoneId:$ctrl.dropZone.id, field:zoneField})"
-               drag-stop="$ctrl.onDragStop({zoneId:$ctrl.dropZone.id, field:zoneField})">
+               drag-start="vm.onDragStart({zoneId:vmdropZone.id, field:zoneField})"
+               drag-stop="vm.onDragStop({zoneId:vm.dropZone.id, field:zoneField})">
                {{ zoneField.name }}
                <img alt="X"
-                    ng-click="$ctrl.onRemove({dropZoneId: $ctrl.dropZone.id, fieldId:zoneField.id})">
+                    ng-click="vm.onRemove({dropZoneId: vm.dropZone.id, fieldId:zoneField.id})">
            </li>
        </ul>
      </div>

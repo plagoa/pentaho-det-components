@@ -21,19 +21,20 @@ define(
   ],
   function(dropZoneTemplate, dropZoneController) {
     var options = {
-        bindings: {
-            // Inputs
-            dropZone: '<',
+      bindings: {
+        // Inputs
+        dropZone: '<',
 
-            // Outputs
-            onDrop: '&',
-            onDragover: '&',
-            onDragStart: '&',
-            onDragStop: '&',
-            onRemove: '&'
-          },
+        // Outputs
+        onDrop: '&',
+        onDragover: '&',
+        onDragStart: '&',
+        onDragStop: '&',
+        onRemove: '&'
+      },
       template: dropZoneTemplate,
-      controller: dropZoneController
+      controller: dropZoneController,
+      controllerAs: 'vm'
     };
 
     return {

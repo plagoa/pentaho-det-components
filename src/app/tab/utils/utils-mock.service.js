@@ -24,20 +24,20 @@ define(
     function MockService() {
 
       var fields = [
-       {id: "1", name: 'Field 1', state: false, category: 'Category 1', disableDrag: false, disableClick: true},
-       {id: "2", name: 'Field 2', state: false, category: 'Category 1', disableDrag: false, disableClick: true},
-       {id: "3", name: 'Field 3', state: false, category: 'Category 1', disableDrag: false, disableClick: true},
-       {id: "4", name: 'Field 4', state: false, category: 'Category 2', disableDrag: false, disableClick: true},
-       {id: "5", name: 'Field 5', state: false, category: 'Category 2', disableDrag: false, disableClick: true},
-       {id: "6", name: 'Field 6', state: false, category: 'Category 2', disableDrag: false, disableClick: true},
-       {id: "7", name: 'Field 7', state: false, category: 'Category 2', disableDrag: false, disableClick: true},
-       {id: "8", name: 'Field 8', state: false, category: 'Category 3', disableDrag: false, disableClick: true},
-       {id: "9", name: 'Field 9', state: false, category: 'Category 3', disableDrag: false, disableClick: true},
-       {id: "10", name: 'Field 10', state: false, category: 'Category 3', disableDrag: false, disableClick: true},
-       {id: "11", name: 'Field 11', state: false, category: 'Category 3', disableDrag: true, disableClick: false},
-       {id: "12", name: 'Field 12', state: false, category: 'Category 3', disableDrag: true, disableClick: false},
-       {id: "13", name: 'Field 13', state: false, category: 'Category 3', disableDrag: true, disableClick: false},
-       {id: "14", name: 'Field 14', state: false, category: 'Category 3', disableDrag: true, disableClick: false}
+       {id: "1", name: 'Field 1', state: false, category: 'Category 1'},
+       {id: "2", name: 'Field 2', state: false, category: 'Category 1'},
+       {id: "3", name: 'Field 3', state: false, category: 'Category 1'},
+       {id: "4", name: 'Field 4', state: false, category: 'Category 2'},
+       {id: "5", name: 'Field 5', state: false, category: 'Category 2'},
+       {id: "6", name: 'Field 6', state: false, category: 'Category 2'},
+       {id: "7", name: 'Field 7', state: false, category: 'Category 2'},
+       {id: "8", name: 'Field 8', state: false, category: 'Category 3'},
+       {id: "9", name: 'Field 9', state: false, category: 'Category 3'},
+       {id: "10", name: 'Field 10', state: false, category: 'Category 3'},
+       {id: "11", name: 'Field 11', state: false, category: 'Category 3'},
+       {id: "12", name: 'Field 12', state: false, category: 'Category 3'},
+       {id: "13", name: 'Field 13', state: false, category: 'Category 3'},
+       {id: "14", name: 'Field 14', state: false, category: 'Category 3'}
      ];
 
 

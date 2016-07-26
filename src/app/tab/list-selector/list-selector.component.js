@@ -30,7 +30,8 @@ define(
         onDragStart: '&',
         onDragStop: '&'
       },
-      template: listSelectorTemplate
+      template: listSelectorTemplate,
+      controllerAs: 'vm'
     };
 
     return {
