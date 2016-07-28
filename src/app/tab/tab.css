@@ -10,11 +10,6 @@ body, p, ul {
   list-style: none;
 }
 
-img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .components-field-selector {
   width: 230px;
   float: left;
