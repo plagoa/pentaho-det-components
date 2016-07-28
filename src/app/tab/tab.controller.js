@@ -82,26 +82,15 @@ define(
         var srcZoneId = activeZone;//event.dataTransfer.getData("srcZoneId");
         console.log("FieldId: " + fieldId + " was dropped on dropzone >", dropZoneId);
 
-        //inserts or updates field position in dropZone
-        var fieldSibling = getFieldSibling(event.target);
-        MockService.dropZoneFieldInsert(dropZoneId, fieldId, isAboveMiddle(event, fieldSibling), fieldSibling.id);
         if(srcZoneId && srcZoneId != dropZoneId) {
+          MockService.dropZoneFieldAdd(dropZoneId, fieldId);
           MockService.dropZoneFieldRemove(srcZoneId, fieldId);
+        }
+        else {
+          MockService.dropZoneFieldAdd(dropZoneId, fieldId);
         }
         draggedField = null;
         activeZone = null;
-      }
-
-      function getFieldSibling(triggeredElement)  {
-        if(triggeredElement.tagName == "IMG") {
-          triggeredElement = triggeredElement.parentNode;
-        }
-        return triggeredElement;
-      }
-
-      function isAboveMiddle(event, targetNode) {
-        var offsetY = event.layerY;
-        return offsetY < targetNode.offsetTop + targetNode.offsetHeight / 2;
       }
 
       function onDragover(dropZone) {
