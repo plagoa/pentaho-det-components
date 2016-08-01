@@ -10,19 +10,20 @@ body, p, ul {
   list-style: none;
 }
 
-.components-field-selector {
+.components-wrapper .components-field-selector {
   margin: 20px 0 0 20px;
   background-color: #FDFDFD;
   border: 1px solid #CCCCCC;
   padding: 10px;
-  width: 200px;
+  width: 220px;
   float: left;
+  box-sizing: border-box;
   height: 600px; /* just for testing purposes */
 }
 
 /* View Mode Menu */
 
-.view-mode {
+.components-wrapper .view-mode {
   width: 200px;
   line-height: 30px;
   border: 1px solid #CCCCCC;
@@ -33,72 +34,72 @@ body, p, ul {
   table-layout: fixed;
 }
 
-.view-mode div {
+.components-wrapper .view-mode div {
   display: table-cell;
 }
 
-.view-mode div:first-of-type {
+.components-wrapper .view-mode div:first-of-type {
   border-right: 1px solid #CCCCCC;
 }
 
-.view-mode div.active {
+.components-wrapper .view-mode div.active {
   color: #005DA6;
   box-shadow: 0px -3px 0px #005DA6 inset;
 }
 
 /* View List */
 
-.view-list {
+.components-wrapper .view-list {
   padding: 0;
   text-align: left;
   margin: 2;
   border-top: 1px solid #CCCCCC;
 }
 
-.view-list > div {
+.components-wrapper .view-list > div {
   list-style-type: none;
 }
 
-.view-list > div.field {
+.components-wrapper .view-list > div.field {
   height: 30px;
   line-height: 30px;
   color: #000000;
   background: url('images/uncheck.svg') no-repeat 10px 10px;
   background-size: 12px 12px;
   margin-left: -10px;
-  width: 220px;
+  width: 240px;
 }
 
-.view-list > div.field:hover {
+.components-wrapper .view-list > div.field:hover {
   background-color: #E6EFF6;
   cursor:pointer;
 }
 
-.view-list > div.field.selected {
+.components-wrapper .view-list > div.field.selected {
   background: url('images/checked.svg') no-repeat 10px 10px;
   background-size: 12px 12px;
 }
 
-.view-list span.label {
+.components-wrapper .view-list span.label {
   font-weight: bold;
   font-size: 0.9em;
 }
 
-.view-list .category .field {
+.components-wrapper .view-list .category .field {
   padding-left: 10px;
 }
 
-.view-list span.active {
+.components-wrapper .view-list span.active {
   height: 8px;
   float: left;
   margin: 1px 0 0 32px;
 }
 
-#drag-field-ghost {
+.components-wrapper #drag-field-ghost {
   background-color: #E6EFF6;
   border: 1px solid #99BEDB;
   opacity: 0.8;
-  width: 220px;
+  width: 250px;
   height: 30px;
   position: absolute;
   top: -100px;
@@ -121,7 +122,7 @@ body, p, ul {
 
 /* Search */
 
-.search-field {
+.components-wrapper .search-field {
   width: 180px;
   height: 20px;
   padding: 3px 5px;
@@ -130,7 +131,7 @@ body, p, ul {
 
 /* Clear */
 
-.clear-fields {  
+.components-wrapper .clear-fields {  
   font-size: 14px;
   color: #005DA6;  
   margin: 20px 0 10px 0;
@@ -140,7 +141,7 @@ body, p, ul {
 }
 
 /* Drop Zones */
-.components-drop-zones {
+.components-wrapper .components-drop-zones {
   float: left;
   box-sizing: border-box;
   background-color: #FDFDFD;
@@ -149,16 +150,16 @@ body, p, ul {
   padding: 10px;
   width: 210px;
   margin: 20px 0 0 0;  /* just for testing purposes */
-  height: 622px; /* just for testing purposes */
+  height: 600px; /* just for testing purposes */
 }
 
-.drop-zone-title {
+.components-wrapper .drop-zone-title {
   color: #666666;
   font-size: 14px;
   padding-bottom: 10px;
 }
 
-.drop-zone-empty-message {
+.components-wrapper .drop-zone-empty-message {
   color: #999999;
   font-size: 12px;
   text-align: center;
@@ -166,11 +167,11 @@ body, p, ul {
   vertical-align: middle;
 }
 
-.drop-zone-drop-parent-container {
+.components-wrapper .drop-zone-drop-parent-container {
   margin-bottom: 30px;
 }
 
-.drop-zone-drop-container {
+.components-wrapper .drop-zone-drop-container {
   display: table;
   min-height: 70px;
   border-top: 1px solid #CCCCCC;
@@ -178,7 +179,7 @@ body, p, ul {
   width: 190px;
 }
 
-.drop-zone-drop-container-active {
+.components-wrapper .drop-zone-drop-container-active {
   display: table;
   min-height: 70px;
   border-top: 1px solid #CCCCCC;
@@ -186,16 +187,16 @@ body, p, ul {
   width: 190px;
 }
 
-.drop-zone-drop-container-active-hover {
+.components-wrapper .drop-zone-drop-container-active-hover {
   background-color: #99BEDB !important;
 }
 
-.drop-zone-disabled {
+.components-wrapper .drop-zone-disabled {
     opacity: 1;
     pointer-events: none;
 }
 
-.drop-zone-drop-parent-container .field {
+.components-wrapper .drop-zone-drop-parent-container .field {
   height: 30px;
   width: 176px;
   font-size: 14px;
@@ -204,19 +205,19 @@ body, p, ul {
   padding: 7px 0 0 11px;
 }
 
-.drop-zone-drop-parent-container .field:hover {
+.components-wrapper .drop-zone-drop-parent-container .field:hover {
   background: #E6EFF6 url('close.png') no-repeat 162px 3px;
   cursor:pointer;
 }
 
-.drop-zone-drop-container .close {
+.components-wrapper .drop-zone-drop-container .close {
   float: right;
   margin: 2px 7px 0 0;
   width: 12px;
   height: 12px;
 }
 
-.drop-zone-drop-container .close:hover {
+.components-wrapper .drop-zone-drop-container .close:hover {
   background: rgba(204, 223, 237, 1) url('close-hover.png') no-repeat -6px -6px;
 }
 
